@@ -1,0 +1,13 @@
+apiVersion: telegram.alert/v1
+kind: TelegramNotifier
+metadata:
+  name: my-telegram-notifier
+spec:
+  botToken: "8012527437:AAErJhcuX973-SFZTn3wSeDouwAqhl6haMk"
+  chatID: "1330746276"
+  events:
+    - CrashLoopBackOff
+    - Error
+  namespaces:
+    - default
+
