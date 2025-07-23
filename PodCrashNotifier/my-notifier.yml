@@ -3,8 +3,8 @@ kind: TelegramNotifier
 metadata:
   name: my-telegram-notifier
 spec:
-  botToken: "8012527437:AAErJhcuX973-SFZTn3wSeDouwAqhl6haMk"
-  chatID: "1330746276"
+  botToken: "YOUR-BOT-TOKEN"
+  chatID: "YOUR-BOT-CHAT-ID"
   events:
     - CrashLoopBackOff
     - Error
