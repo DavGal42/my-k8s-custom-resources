@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: crash-pod-2
+  namespace: default
+spec:
+  containers:
+    - name: bad-container
+      image: busybox
+      command: ["false"]
+  restartPolicy: Always
+

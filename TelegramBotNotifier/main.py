@@ -2,9 +2,12 @@ import kopf
 import requests
 from kubernetes import client, config
 
-config.load_kube_config() # Locally — load_kube_config()
+# Locally - config.load_kube_config()
+# In Cluster - config.load_incluster_config()
+config.load_incluster_config()
 
 notifier_config = {}
+
 
 def send_telegram_message(bot_token, chat_id, message):
     url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
@@ -20,7 +23,7 @@ def on_create_fn(spec, name, namespace, logger, **kwargs):
     events = spec.get('events', [])
     namespaces = spec.get('namespaces', [])
 
-    if bot_token and chat_id:
+    if bot_token and chat_id and events and namespaces:
         notifier_config[name] = {
             "bot_token": bot_token,
             "chat_id": chat_id,
@@ -36,7 +39,7 @@ def on_create_fn(spec, name, namespace, logger, **kwargs):
         else:
             logger.error("❌ Failed to send message.")
     else:
-        logger.warning("⚠️ There is no botToken or chatID.")
+        logger.warning("⚠️ There is no some information.")
 
 
 @kopf.timer('pods', interval=30.0)

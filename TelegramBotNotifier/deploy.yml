@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: telegram-operator
+  labels:
+    app: telegram-operator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: telegram-operator
+  template:
+    metadata:
+      labels:
+        app: telegram-operator
+    spec:
+      serviceAccountName: telegram-operator
+      containers:
+        - name: operator
+          image: davidgalstyan/telegram-operator:1.3.0
+          imagePullPolicy: Always
+
