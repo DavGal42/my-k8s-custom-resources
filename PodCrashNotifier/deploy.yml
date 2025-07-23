@@ -17,6 +17,6 @@ spec:
       serviceAccountName: telegram-operator
       containers:
         - name: operator
-          image: davidgalstyan/telegram-operator:1.4.0
+          image: your-username/your-image:version
           imagePullPolicy: Always
 
