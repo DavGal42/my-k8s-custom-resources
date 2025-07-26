@@ -1,6 +1,6 @@
-# <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Incoming%20Envelope.webp" alt="Incoming Envelope" width="50" height="50" /> Telegram Bot Notifier During Pod Crash
+# Telegram Bot Notifier During Pod Crash
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Card%20Index%20Dividers.webp" alt="Card Index Dividers" width="30" height="30" /> Project Structure
+## Project Structure
 
 ```bash
 PodCrashNotifier
@@ -16,7 +16,7 @@ PodCrashNotifier
 └── telegram-notifier-crd.yml
 ```
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Travel%20and%20Places/Rocket.webp" alt="Rocket" width="30" height="30" /> Installation Guide
+## Installation Guide
 
 ### 1. Build the Docker image
 
