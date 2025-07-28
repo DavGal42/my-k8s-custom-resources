@@ -31,7 +31,7 @@ def on_create_fn(spec, name, namespace, logger, **kwargs):
             "namespaces": namespaces,
         }
 
-        message = f"👋 Hi! TelegramNotifier {name} has been created successfully."
+        message = f"Hi! TelegramNotifier {name} has been created successfully."
         success = send_telegram_message(bot_token, chat_id, message)
 
         if success:
@@ -66,7 +66,7 @@ def periodic_pod_checker(logger, **kwargs):
                         f"🔥 Pod {pod_name} in namespace {namespace} has been broken. Reason: *{reason}*"
                     )
                     send_telegram_message(cfg["bot_token"], cfg["chat_id"], message)
-                    logger.info(f"📬 Had been sended a message {notifier_name} about pod {pod_name}")
+                    logger.info(f"Had been sended a message {notifier_name} about pod {pod_name}")
 
 
 @kopf.on.update('v1', 'pods')
@@ -87,4 +87,4 @@ def pod_error_handler(body, logger, **kwargs):
 
                 message = f"🔥 Pod {pod_name} in namespace {namespace} has been broken. Reason: *{reason}*"
                 send_telegram_message(cfg["bot_token"], cfg["chat_id"], message)
-                logger.info(f"📬 Had been sended a message from {notifier_name} for reason {reason}.")
+                logger.info(f"Had been sended a message from {notifier_name} for reason {reason}.")
